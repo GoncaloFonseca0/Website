@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+}
+
+section{
+    padding: 40px 15%;
+}
+.contact{
+    background: #101010;
+    height: 100%;
+    width: 100%;
+    min-height: 100hv;
+    display: grid;
+    grid-template-columns: repeat(2,2fr);
+    align-items: center;
+    grid-gap: 6rem;
+}
+
+.contact-image img{
+max-width: 100%;
+width: 600px;
+height: 550px;
+border-radius: 10px;
+}
+.contact-form h1{
+    font-size: 80px;
+    color: black;
+    margin-bottom: 20px;
+}
+span{
+    color: #722F37;
+}
+
+.contact-form p{
+    color: #ee0000bf;
+    letter-spacing: 1px;
+    line-height: 26px;
+    font-size: 1.1rem;
+    margin-bottom: 3.8ram;
+}
+.contact-form form{
+    position: relative;
+}
+
+.contact-form form input, form textarea{
+    width: 100%;
+    padding: 17px;
+    border: none;
+    outline: none;
+    background: #191919;
+    color:#fff;
+    font-size: 1.1rem;
+    margin-bottom: 0.7rem;
+    border-radius: 10px;
+}
+
+.contact-form textarea{
+resize: none;
+height: 140px;
+}
+
+.contact-form form .btn{
+    display: inline-block;
+    background: #722F37;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 600;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    width: 220px;
+    transition: ease .20s;
+    cursor: pointer;
+}
+
+.contact-form form .btn:hover{
+    border: 2px solid #722F37;
+    background: transparent;
+    transform: scale(1.1);
+
+}
+
+@media (max-width:1570px){
+    section{
+        padding: 10px 3%;
+        transition: .2s;
+    }
+    .contact-form h1{
+        font-size: 40px;
+    }
+    .contact-form p{
+        margin-bottom: 2rem;
+    }
+}
+
+@media(max-width:1090px){
+    .contact{
+        grid-gap: 2rem;
+        transition: .3s;
+    }
+}
+
+@media(max-width:100px){
+    .contact{
+       grid-template-columns: 1fr;
+    }
+    .contact-form{
+        order: 2;
+    }
+    .contact-image img{
+        max-width: 100%;
+        width: 100%;
+        height: auto; 
+    }
+}
+
+
+
+
+ /* Começa a Página de Sneakers */
+
+
+
+ #feature {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+
+}
+
+#feature .fe-box{
+    width: 180px;
+    text-align: center;
+    padding: 25px 15px;
+    box-shadow: 20px 20px 34px rgba(0, 0, 0, 0.03);
+    border-radius: 4px;
+    margin: 15px 0;
+}
+    
+#feauture .fe-box:hover {
+box-shadow: 10px 10px 54px rgba(70, 62, 221, 0.1);
+}
+
+#feature .fe-box img {
+width: 100%;
+margin-bottom: 10px;
+}
+
+
+#feauture .fe-box h6 {
+display: inline-block;
+padding: 9px 8px 6px 8px;
+line-height: 1;
+border-radius: 4px;
+color: aquamarine;
+background-color: #ffffff;
+}
+
+#feature .fe-box:nth-child(2) h6 {
+background-color: #E3E6F3;
+}
+#feature .fe-box:nth-child(3) h6 {
+background-color: #E3E6F3;
+}
+#feature .fe-box:nth-child(4) h6 {
+background-color: #E3E6F3;
+}
+#feature .fe-box:nth-child(5) h6 {
+background-color: #E3E6F3;
+}
+#feature .fe-box:nth-child(6) h6 {
+background-color: #E3E6F3;
+}
+
+#product1 {
+text-align: center;
+}
+
+#product1 .pro-container{
+display: flex;
+justify-content: space-between;
+padding-top: 20px;
+flex-wrap: wrap;
+}
+
+#product1 .pro{
+width: 23%;
+min-width: 250px;
+padding: 10px 12px;
+border: 1px solid #cce7d0;
+border-radius: 25px;
+cursor: pointer;
+box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02);
+margin: 15px 0;
+transition: 0.2 ease;
+position: relative;
+}
+
+#product1 .pro:hover {
+box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.06);
+
+}
+
+#product1 .pro img {
+width: 100%;
+border-radius: 20px;
+}
+
+#product1 .pro .des{
+text-align: start;
+padding: 10px 0;
+}
+
+#product1 .pro .des span {
+color: #1a1a1a;
+font-size: 12px;
+
+}
+
+#product1 .pro .des h5{
+padding-top: 7px;
+color: #1a1a1a;
+font-size: 14px;
+
+}
+
+
+#product1 .pro .des i{
+font-size: 12px;
+color: rgb(255, 238, 3);
+
+
+}
+
+#product1 .pro .des h4 {
+padding-top: 7px;
+font-size: 15px;
+font-weight: 700;
+color: aquamarine;
+}
+
+
+#product1 .pro .cart {
+width: 40px;
+height: 40px;
+line-height: 40px;
+border-radius: 50px;
+background-color: snow;
+font-weight: 500;
+color: aquamarine;
+border: 1px solid #cce7d0;
+position: absolute;
+bottom: 20px;
+right: 10px;
+
+}
