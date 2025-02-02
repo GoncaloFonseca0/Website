@@ -1,21 +1,28 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Simulating session storage (use actual authentication system)
-    const user = JSON.parse(localStorage.getItem("user"));
+    fetch("./Connection/checkSession.php")
+        .then(response => response.json())
+        .then(data => {
+            if (data.loggedIn) {
+                document.getElementById("clientName").textContent = data.user_name;
+                document.getElementById("clientEmail").textContent = data.email;
+                document.getElementById("clientPhone").textContent = data.phone || "Not available";
+                document.getElementById("clientAddress").textContent = data.address || "Not available";
+            } else {
+                window.location.href = "login.html"; // Redireciona se não estiver logado
+            }
+        })
+        .catch(error => console.error("Error fetching client data:", error));
 
-    if (!user) {
-        // If no user is logged in, redirect to login page
-        window.location.href = "login.html";
-    } else {
-        // Populate user details
-        document.getElementById("clientName").innerText = user.full_name;
-        document.getElementById("clientEmail").innerText = user.email;
-        document.getElementById("clientPhone").innerText = user.phone;
-        document.getElementById("clientAddress").innerText = user.address;
-    }
+    // ✅ Corrigindo o botão de logout
+    document.getElementById("logoutBtn").addEventListener("click", function (e) {
+        e.preventDefault(); // Impede que o botão recarregue a página
 
-    // Logout function
-    document.getElementById("logoutBtn").addEventListener("click", function () {
-        localStorage.removeItem("user"); // Clear user session
-        window.location.href = "index.html";
+        fetch("./Connection/logout.php", { method: "GET", credentials: "same-origin" })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data.message); // Exibe a mensagem no console
+                window.location.href = "login.html"; // Redireciona para login
+            })
+            .catch(error => console.error("Logout error:", error));
     });
 });
